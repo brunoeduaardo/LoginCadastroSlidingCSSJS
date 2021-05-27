@@ -24,11 +24,12 @@ body, input {
     width: 2000px;
     height: 2000px;
     border-radius: 50%;
-    background: linear-gradient(-45deg, #6c8a9bbe, #6c8a9b);
+    background: linear-gradient(-45deg, #6c8a9b, #88a2b1);
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
     z-index: 6;
+    transition: 1.8s ease-in-out;
 }
 
 .forms-container {
@@ -79,7 +80,7 @@ form.sign-up-form {
     max-width: 380px;
     width: 100%;
     height: 55px;
-    background-color: #E6E6E4;
+    background-color: #EFEFEF;
     margin: 10px 0;
     border-radius: 55px;
     display: grid;
@@ -90,7 +91,7 @@ form.sign-up-form {
 .input-field i {
     text-align: center;
     line-height: 55px;
-    color: #ACACAC;
+    color: #EFEFEF;
 }
 
 .input-field input{
@@ -100,11 +101,11 @@ form.sign-up-form {
     line-height: 1;
     font-weight: 600;
     font-size: 1.1rem;
-    color: #4B5F7B;
+    color: #5d7494;
 }
 
 .input-field input::placeholder {
-    color: #4b5f7b71;
+    color: #5d7494;
     font-weight: 500;
 }
 
@@ -115,7 +116,7 @@ form.sign-up-form {
     outline: none;
     border-radius: 49px;
     cursor: pointer;
-    background-color: #6c8a9bcc;
+    background-color: #5d7494;
     color: #EFEFEF;
     text-transform: uppercase;
     font-weight: 600;
@@ -140,13 +141,13 @@ form.sign-up-form {
 .social-icon {
     height: 46px;
     width: 46px;
-    border: 1px solid #6c8a9bcc;
+    border: 1px solid #5d7494;
     margin: 0 0.45rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #6c8a9bcc;
+    color: #5d7494;
     font-size: 1.1rem;
     border-radius: 50%;
     transition: 0.3s;
@@ -187,7 +188,8 @@ form.sign-up-form {
 }
 
 .panel .content {
-    color: #EFEFEF
+    color: #EFEFEF;
+    transition: .9s .6s ease-in-out;
 }
 
 .panel h3 {
@@ -214,8 +216,34 @@ form.sign-up-form {
 .image {
     margin-top: 70px;
     width: 100%;
+    transition: 1.1s .4s ease-in-out;
 }
 
 .right-panel .content, .right-panel .image {
     transform: translateX(800px);
+}
+
+/* ANIMATION */
+
+.container.sign-up-mode:before {
+    transform: translate(100%, -50%);
+    right: 52%;
+}
+
+.container.sign-up-mode .left-panel .image,
+.container.sign-up-mode .left-panel .content {
+  transform: translateX(-800px);
+}
+
+.container.sign-up-mode .right-panel .image,
+.container.sign-up-mode .right-panel .content {
+  transform: translateX(0px);
+}
+
+.container.sign-up-mode .left-panel {
+    pointer-events: none;
+}
+  
+  .container.sign-up-mode .right-panel {
+    pointer-events: all;
 }
